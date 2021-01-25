@@ -16,11 +16,11 @@
         </div>
 		<div class="pure-control-group">
             <label for="termin_platnosci">Termin Płatności</label>
-            <input id="termin_platnosci" type="text" placeholder="Termin płatności" name="termin+platnosci" value="{$form->termin_platnosci}">
+            <input id="termin_platnosci" type="text" placeholder="Termin płatności" name="termin_platnosci" value="{$form->termin_platnosci}">
         </div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>
-			<a class="pure-button button-secondary" href="{$conf->action_root}fakturaHistory">Powrót</a>
+			<a class="pure-button button-secondary" href="{$conf->action_root}faktHistory">Powrót</a>
 		</div>
 	</fieldset>
     <input type="hidden" name="faktura_numer" value="{$form->faktura_numer}">

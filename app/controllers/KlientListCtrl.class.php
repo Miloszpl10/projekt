@@ -28,7 +28,7 @@ class KlientListCtrl {
         return !App::getMessages()->isError();
     }
 
-    public function action_KlientList() {
+    public function action_klientList() {
         // 1. Walidacja danych formularza (z pobraniem)
         // - W tej aplikacji walidacja nie jest potrzebna, ponieważ nie wystąpią błedy podczas podawania nazwiska.
         //   Jednak pozostawiono ją, ponieważ gdyby uzytkownik wprowadzał np. datę, lub wartość numeryczną, to trzeba

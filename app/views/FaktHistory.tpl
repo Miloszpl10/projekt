@@ -17,7 +17,7 @@
 {block name=bottom}
 
 <div class="bottom-margin">
-<a class="pure-button button-success" href="{$conf->action_root}faktEdit">+ Nowa faktura</a>
+<a class="pure-button button-success" href="{$conf->action_root}faktNew">+ Nowa faktura</a>
 </div>	
 
 <table id="tab_fakt" class="pure-table pure-table-bordered">
@@ -33,9 +33,9 @@
 {foreach $fakt as $f}
 {strip}
 	<tr>
-		<td>{$p["faktura_numer"]}</td>
-		<td>{$p["koszt"]}</td>
-		<td>{$p["termin_płatnosci"]}</td>
+		<td>{$f["faktura_numer"]}</td>
+		<td>{$f["koszt"]}</td>
+		<td>{$f["termin_platnosci"]}</td>
 		<td>
 			<a class="button-small pure-button button-secondary" href="{$conf->action_url}faktEdit/{$f['faktura_numer']}">Edytuj</a>
 			&nbsp;

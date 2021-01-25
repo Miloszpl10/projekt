@@ -3,7 +3,7 @@
 {block name=top}
 
 <div class="bottom-margin">
-<form class="pure-form pure-form-stacked" action="{$conf->action_url}KlientList">
+<form class="pure-form pure-form-stacked" action="{$conf->action_url}klientList">
 	<legend>Opcje wyszukiwania</legend>
 	<fieldset>
 		<input type="text" placeholder="marka samochodu" name="sf_marka" value="{$searchForm->marka}" /><br />
@@ -17,7 +17,7 @@
 {block name=bottom}
 
 <div class="bottom-margin">
-<a class="pure-button button-success" href="{$conf->action_root}KlientNew">+ Nowa osoba</a>
+<a class="pure-button button-success" href="{$conf->action_root}klientNew">+ Nowa osoba</a>
 </div>	
 
 <table id="tab_klient" class="pure-table pure-table-bordered">

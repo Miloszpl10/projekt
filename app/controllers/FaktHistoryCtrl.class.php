@@ -19,7 +19,7 @@ class FaktHistoryCtrl {
 
     public function validate() {
         // 1. sprawdzenie, czy parametry zostały przekazane
-        $this->form->marka = ParamUtils::getFromRequest('sf_marka');
+        $this->form->faktura_numer = ParamUtils::getFromRequest('sf_faktura');
 
         // 2. sprawdzenie poprawności przekazanych parametrów
 
@@ -33,8 +33,8 @@ class FaktHistoryCtrl {
 
         // 2. Przygotowanie mapy z parametrami wyszukiwania (nazwa_kolumny => wartość)
         $search_params = []; //przygotowanie pustej struktury (aby była dostępna nawet gdy nie będzie zawierała wierszy)
-        if (isset($this->form->marka) && strlen($this->form->marka) > 0) {
-            $search_params['marka[~]'] = $this->form->marka . '%'; // dodanie symbolu % zastępuje dowolny ciąg znaków na końcu
+        if (isset($this->form->faktura_numer) && strlen($this->form->faktura_numer) > 0) {
+            $search_params['faktura_numer[~]'] = $this->form->faktura_numer . '%'; // dodanie symbolu % zastępuje dowolny ciąg znaków na końcu
         }
 
         // 3. Pobranie listy rekordów z bazy danych
@@ -46,15 +46,14 @@ class FaktHistoryCtrl {
             $where = &$search_params;
         }
         //dodanie frazy sortującej po nazwisku
-        $where ["ORDER"] = "marka";
+        $where ["ORDER"] = "faktura_numer";
         //wykonanie zapytania
 
         try {
-            $this->records = App::getDB()->select("samochod", [
-                "samochod_vim",
-                "marka",
-                "model",
-                "rok",
+            $this->records = App::getDB()->select("faktura", [
+                "faktura_numer",
+                "koszt",
+                "termin_platnosci",
                     ], $where);
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
@@ -64,7 +63,7 @@ class FaktHistoryCtrl {
 
         // 4. wygeneruj widok
         App::getSmarty()->assign('searchForm', $this->form); // dane formularza (wyszukiwania w tym wypadku)
-        App::getSmarty()->assign('people', $this->records);  // lista rekordów z bazy danych
+        App::getSmarty()->assign('fakt', $this->records);  // lista rekordów z bazy danych
         App::getSmarty()->display('FaktHistory.tpl');
     }
 

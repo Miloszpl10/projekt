@@ -6,7 +6,7 @@
 <form class="pure-form pure-form-stacked" action="{$conf->action_url}klientList">
 	<legend>Opcje wyszukiwania</legend>
 	<fieldset>
-		<input type="text" placeholder="marka samochodu" name="sf_marka" value="{$searchForm->marka}" /><br />
+		<input type="text" placeholder="Nazwisko" name="sf_nazwisko" value="{$searchForm->nazwisko}" /><br />
 		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
 	</fieldset>
 </form>
@@ -23,10 +23,10 @@
 <table id="tab_klient" class="pure-table pure-table-bordered">
 <thead>
 	<tr>
-		<th>VIM Samochodu</th>
-		<th>Marka</th>
-		<th>Model</th>
-		<th>Rok</th>
+		<th>wlasciciel_id</th>
+		<th>nazwisko</th>
+		<th>telefon</th>
+		<th>samochod_vim</th>
 		<th>Opcje</th>
 	</tr>
 </thead>
@@ -34,14 +34,14 @@
 {foreach $klient as $k}
 {strip}
 	<tr>
+		<td>{$k["wlasciciel_id"]}</td>
+		<td>{$k["nazwisko"]}</td>
+		<td>{$k["telefon"]}</td>
 		<td>{$k["samochod_vim"]}</td>
-		<td>{$k["marka"]}</td>
-		<td>{$k["model"]}</td>
-		<td>{$k["rok"]}</td>
 		<td>
-			<a class="button-small pure-button button-secondary" href="{$conf->action_url}klientEdit/{$k['samochod_vim']}">Edytuj</a>
+			<a class="button-small pure-button button-secondary" href="{$conf->action_url}klientEdit/{$k['wlasciciel_id']}">Edytuj</a>
 			&nbsp;
-			<a class="button-small pure-button button-warning" href="{$conf->action_url}klientDelete/{$k['samochod_vim']}">Usuń</a>
+			<a class="button-small pure-button button-warning" href="{$conf->action_url}klientDelete/{$k['wlasciciel_id']}">Usuń</a>
 		</td>
 	</tr>
 {/strip}

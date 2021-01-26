@@ -3,5 +3,5 @@
 namespace app\forms;
 
 class KlientSearchForm {
-	public $marka;
+	public $nazwisko;
 } 

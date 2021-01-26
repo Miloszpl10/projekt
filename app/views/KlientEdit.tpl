@@ -7,23 +7,19 @@
 	<fieldset>
 		<legend>Dane osoby</legend>
 		<div class="pure-control-group">
-            <label for="marka">Marka</label>
-            <input id="marka" type="text" placeholder="Marka" name="marka" value="{$form->marka}">
+            <label for="nazwisko">Nazwisko</label>
+            <input id="nazwisko" type="text" placeholder="Nazwisko" name="nazwisko" value="{$form->nazwisko}">
         </div>
 		<div class="pure-control-group">
-            <label for="model">Model</label>
-            <input id="model" type="text" placeholder="Model" name="model" value="{$form->model}">
-        </div>
-		<div class="pure-control-group">
-            <label for="rok">Rok</label>
-            <input id="rok" type="text" placeholder="Rok" name="rok" value="{$form->rok}">
+            <label for="telefon">Numer Telefon</label>
+            <input id="Telefon" type="text" placeholder="Numer Telefonu" name="telefon" value="{$form->telefon}">
         </div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>
 			<a class="pure-button button-secondary" href="{$conf->action_root}klientList">Powrót</a>
 		</div>
 	</fieldset>
-    <input type="hidden" name="samochd_vim" value="{$form->samochod_vim}">
+    <input type="hidden" name="wlasciciel_id" value="{$form->wlasciciel_id}">
 </form>	
 </div>
 

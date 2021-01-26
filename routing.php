@@ -12,17 +12,10 @@ Utils::addRoute('hello', 'HelloCtrl');
 
 
 
-//Utils::addRoute('nowa', 'NowyKontroler');
-
-
-Utils::addRoute('personList',    'PersonListCtrl');
 Utils::addRoute('loginShow',     'LoginCtrl');
 Utils::addRoute('login',         'LoginCtrl');
 Utils::addRoute('logout',        'LoginCtrl');
-Utils::addRoute('personNew',     'PersonEditCtrl',	['mechanik','wlasciciel']);
-Utils::addRoute('personEdit',    'PersonEditCtrl',	['mechanik','wlasciciel']);
-Utils::addRoute('personSave',    'PersonEditCtrl',	['mechanik','wlasciciel']);
-Utils::addRoute('personDelete',  'PersonEditCtrl',	['wlasciciel']);
+
 
 //Wlasciciel dostep do faktury i uzupelniania
 Utils::addRoute('faktHistory',   'FaktHistoryCtrl',	    ['wlasciciel']);
@@ -44,6 +37,5 @@ Utils::addRoute('carEdit',       'CarEditCtrl',     ['mechanik','wlasciciel']);
 Utils::addRoute('carSave',       'CarEditCtrl',  	['mechanik','wlasciciel']);
 
 //Wyswietlenie listy klientow i samochodow
-Utils::addRoute('klientList',   'KlientListCtrl');
 Utils::addRoute('klientList',   'KlientListCtrl',       ['mechanik','wlasciciel']);
 Utils::addRoute('carList',      'CarListCtrl',          ['mechanik','wlasciciel']);

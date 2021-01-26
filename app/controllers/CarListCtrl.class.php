@@ -5,22 +5,22 @@ namespace app\controllers;
 use core\App;
 use core\Utils;
 use core\ParamUtils;
-use app\forms\KlientSearchForm;
+use app\forms\CarSearchForm;
 
-class KlientListCtrl {
+class CarListCtrl {
 
     private $form; //dane formularza wyszukiwania
     private $records; //rekordy pobrane z bazy danych
 
     public function __construct() {
         //stworzenie potrzebnych obiektów
-        $this->form = new KlientSearchForm();
+        $this->form = new CarSearchForm();
     }
 
     public function validate() {
         // 1. sprawdzenie, czy parametry zostały przekazane
         // - nie trzeba sprawdzać
-        $this->form->nazwisko = ParamUtils::getFromRequest('sf_nazwisko');
+        $this->form->marka = ParamUtils::getFromRequest('sf_marka');
 
         // 2. sprawdzenie poprawności przekazanych parametrów
         // - nie trzeba sprawdzać
@@ -28,7 +28,7 @@ class KlientListCtrl {
         return !App::getMessages()->isError();
     }
 
-    public function action_klientList() {
+    public function action_carList() {
         // 1. Walidacja danych formularza (z pobraniem)
         // - W tej aplikacji walidacja nie jest potrzebna, ponieważ nie wystąpią błedy podczas podawania nazwiska.
         //   Jednak pozostawiono ją, ponieważ gdyby uzytkownik wprowadzał np. datę, lub wartość numeryczną, to trzeba
@@ -37,8 +37,8 @@ class KlientListCtrl {
 
         // 2. Przygotowanie mapy z parametrami wyszukiwania (nazwa_kolumny => wartość)
         $search_params = []; //przygotowanie pustej struktury (aby była dostępna nawet gdy nie będzie zawierała wierszy)
-        if (isset($this->form->nazwisko) && strlen($this->form->nazwisko) > 0) {
-            $search_params['nazwisko[~]'] = $this->form->nazwisko . '%'; // dodanie symbolu % zastępuje dowolny ciąg znaków na końcu
+        if (isset($this->form->marka) && strlen($this->form->marka) > 0) {
+            $search_params['marka[~]'] = $this->form->marka . '%'; // dodanie symbolu % zastępuje dowolny ciąg znaków na końcu
         }
 
         // 3. Pobranie listy rekordów z bazy danych
@@ -52,15 +52,15 @@ class KlientListCtrl {
             $where = &$search_params;
         }
         //dodanie frazy sortującej po nazwisku
-        $where ["ORDER"] = "nazwisko";
+        $where ["ORDER"] = "marka";
         //wykonanie zapytania
 
         try {
-            $this->records = App::getDB()->select("wlasciciel", [
-                "wlasciciel_id",
-                "nazwisko",
-                "telefon",
+            $this->records = App::getDB()->select("samochod", [
                 "samochod_vim",
+                "marka",
+                "model",
+                "rok",
                     ], $where);
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');
@@ -70,8 +70,8 @@ class KlientListCtrl {
 
         // 4. wygeneruj widok
         App::getSmarty()->assign('searchForm', $this->form); // dane formularza (wyszukiwania w tym wypadku)
-        App::getSmarty()->assign('klient', $this->records);  // lista rekordów z bazy danych
-        App::getSmarty()->display('KlientList.tpl');
+        App::getSmarty()->assign('car', $this->records);  // lista rekordów z bazy danych
+        App::getSmarty()->display('CarList.tpl');
     }
 
 }

@@ -38,6 +38,10 @@ class FaktEditCtrl {
         if (App::getMessages()->isError())
             return false;
 
+        $d = \DateTime::createFromFormat('Y-m-d', $this->form->termin_platnosci);
+        if ($d === false) {
+            Utils::addErrorMessage('Zły format daty. Przykład: 2015-12-20');
+        }
 
         return !App::getMessages()->isError();
     }

@@ -20,18 +20,18 @@ class KlientEditCtrl {
     // Walidacja danych przed zapisem (nowe dane lub edycja).
     public function validateSave() {
         //0. Pobranie parametrów z walidacją
-        $this->form->nazwisko = ParamUtils::getFromRequest('marka', true, 'Błędne wywołanie aplikacji 2');
-        $this->form->telefon = ParamUtils::getFromRequest('model', true, 'Błędne wywołanie aplikacji 3');
+        $this->form->nazwisko = ParamUtils::getFromRequest('nazwisko', true, 'Błędne wywołanie aplikacji 2');
+        $this->form->telefon = ParamUtils::getFromRequest('telefon', true, 'Błędne wywołanie aplikacji 3');
 
         if (App::getMessages()->isError())
             return false;
 
         // 1. sprawdzenie czy wartości wymagane nie są puste
         if (empty(trim($this->form->nazwisko))) {
-            Utils::addErrorMessage('Wprowadź marke');
+            Utils::addErrorMessage('Wprowadź nazwisko');
         }
         if (empty(trim($this->form->telefon))) {
-            Utils::addErrorMessage('Wprowadź model');
+            Utils::addErrorMessage('Wprowadź numer telefonu');
         }
 
         if (App::getMessages()->isError())
@@ -58,14 +58,13 @@ class KlientEditCtrl {
         if ($this->validateEdit()) {
             try {
                 // 2. odczyt z bazy danych osoby o podanym ID (tylko jednego rekordu)
-                $record = App::getDB()->get("samochod", "*", [
-                    "samochod_vim" => $this->form->samochod_vim
+                $record = App::getDB()->get("wlasciciel", "*", [
+                    "wlasciciel_id" => $this->form->wlasciciel_id
                 ]);
                 // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
-                $this->form->samochod_vim = $record['samochod_vim'];
-                $this->form->marka = $record['marka'];
-                $this->form->model = $record['model'];
-                $this->form->rok = $record['rok'];
+                $this->form->wlasciciel_id = $record['wlasciciel_id'];
+                $this->form->nazwisko = $record['nazwisko'];
+                $this->form->telefon = $record['telefon'];
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
                 if (App::getConf()->debug)
@@ -83,8 +82,8 @@ class KlientEditCtrl {
 
             try {
                 // 2. usunięcie rekordu
-                App::getDB()->delete("samochod", [
-                    "samochod_vim" => $this->form->samochod_vim
+                App::getDB()->delete("wlasciciel", [
+                    "wlasciciel_id" => $this->form->wlasciciel_id
                 ]);
                 Utils::addInfoMessage('Pomyślnie usunięto rekord');
             } catch (\PDOException $e) {
@@ -108,12 +107,11 @@ class KlientEditCtrl {
                 //2.1 Nowy rekord
                 if ($this->form->samochod_vim == '') {
                     //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 20
-                    $count = App::getDB()->count("samochod");
+                    $count = App::getDB()->count("wlasciciel");
                     if ($count <= 20) {
-                        App::getDB()->insert("samochod", [
-                            "marka" => $this->form->marka,
-                            "model" => $this->form->model,
-                            "rok" => $this->form->rok
+                        App::getDB()->insert("wlasciciel", [
+                            "nazwisko" => $this->form->nazwisko,
+                            "telefon" => $this->form->telefon
                         ]);
                     } else { //za dużo rekordów
                         // Gdy za dużo rekordów to pozostań na stronie
@@ -123,12 +121,11 @@ class KlientEditCtrl {
                     }
                 } else {
                     //2.2 Edycja rekordu o danym ID
-                    App::getDB()->update("samochod", [
-                        "marka" => $this->form->marka,
-                        "model" => $this->form->model,
-                        "rok" => $this->form->rok
+                    App::getDB()->update("wlasciciel", [
+                        "nazwisko" => $this->form->nazwisko,
+                        "telefon" => $this->form->telefon
                             ], [
-                        "samochod_vim" => $this->form->samochod_vim
+                        "wlasciciel_id" => $this->form->wlasciciel_id
                     ]);
                 }
                 Utils::addInfoMessage('Pomyślnie zapisano rekord');

@@ -39,3 +39,6 @@ Utils::addRoute('carSave',       'CarEditCtrl',  	['mechanik','wlasciciel']);
 //Wyswietlenie listy klientow i samochodow
 Utils::addRoute('klientList',   'KlientListCtrl',       ['mechanik','wlasciciel']);
 Utils::addRoute('carList',      'CarListCtrl',          ['mechanik','wlasciciel']);
+
+Utils::addRoute('menu',   'MenuCtrl',       ['mechanik','wlasciciel']);
+//Utils::addRoute('carList',      'CarListCtrl',          ['mechanik','wlasciciel']);

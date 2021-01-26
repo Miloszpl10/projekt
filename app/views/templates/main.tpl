@@ -9,7 +9,7 @@
 
 
 <div class="pure-menu pure-menu-horizontal bottom-margin">
-	<a href="{$conf->action_root}carList" class="pure-menu-heading pure-menu-link">Lista</a>
+	<a href="{$conf->action_root}carList" class="pure-menu-heading pure-menu-link">Car</a>
 	<a href="{$conf->action_root}klientList" class="pure-menu-heading pure-menu-link">Klient</a>
 {if \core\RoleUtils::inRole("wlasciciel")}
 	<a href="{$conf->action_root}faktHistory" class="pure-menu-heading pure-menu-link">Faktury</a>

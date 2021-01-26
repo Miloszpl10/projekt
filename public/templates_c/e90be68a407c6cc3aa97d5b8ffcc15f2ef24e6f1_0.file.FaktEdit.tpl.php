@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-25 21:27:00
+/* Smarty version 3.1.34-dev-7, created on 2021-01-26 23:40:12
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\FaktEdit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_600f29940a6411_40023996',
+  'unifunc' => 'content_60109a4c9d0458_03402093',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e90be68a407c6cc3aa97d5b8ffcc15f2ef24e6f1' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\FaktEdit.tpl',
-      1 => 1611605354,
+      1 => 1611700789,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_600f29940a6411_40023996 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60109a4c9d0458_03402093 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1644827311600f299409ae73_12122740', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_48470090460109a4c9cc238_30484797', 'top');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'top'} */
-class Block_1644827311600f299409ae73_12122740 extends Smarty_Internal_Block
+class Block_48470090460109a4c9cc238_30484797 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'top' => 
   array (
-    0 => 'Block_1644827311600f299409ae73_12122740',
+    0 => 'Block_48470090460109a4c9cc238_30484797',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -49,7 +49,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 faktSave" method="post" class="pure-form pure-form-aligned">
 	<fieldset>
-		<legend>Dane osoby</legend>
+		<legend>Dane faktury</legend>
 		<div class="pure-control-group">
             <label for="faktura_numer">Numer Faktury</label>
             <input id="faktura_numer" type="text" placeholder="Numer faktury" name="faktura_numer" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->faktura_numer;?>
@@ -71,7 +71,7 @@ faktSave" method="post" class="pure-form pure-form-aligned">
 faktHistory">Powrót</a>
 		</div>
 	</fieldset>
-    <input type="hidden" name="faktura_numer" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->faktura_numer;?>
+    <input type="hidden" name="if_fakt" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->id_fakt;?>
 ">
 </form>
 </div>

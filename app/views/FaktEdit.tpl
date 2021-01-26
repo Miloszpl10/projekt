@@ -5,7 +5,7 @@
 <div class="bottom-margin">
 <form action="{$conf->action_root}faktSave" method="post" class="pure-form pure-form-aligned">
 	<fieldset>
-		<legend>Dane osoby</legend>
+		<legend>Dane faktury</legend>
 		<div class="pure-control-group">
             <label for="faktura_numer">Numer Faktury</label>
             <input id="faktura_numer" type="text" placeholder="Numer faktury" name="faktura_numer" value="{$form->faktura_numer}">
@@ -23,7 +23,7 @@
 			<a class="pure-button button-secondary" href="{$conf->action_root}faktHistory">Powrót</a>
 		</div>
 	</fieldset>
-    <input type="hidden" name="faktura_numer" value="{$form->faktura_numer}">
+    <input type="hidden" name="if_fakt" value="{$form->id_fakt}">
 </form>
 </div>
 

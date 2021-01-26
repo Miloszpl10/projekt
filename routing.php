@@ -31,14 +31,14 @@ Utils::addRoute('klientEdit',    'KlientEditCtrl',  	['mechanik','wlasciciel']);
 Utils::addRoute('klientSave',    'KlientEditCtrl',  	['mechanik','wlasciciel']);
 
 //Dostep oraz wporwadzanie danych samochod
-Utils::addRoute('carNew', 	     'CarEditCtrl',   	['mechanik','wlasciciel']);
-Utils::addRoute('carDelete',     'CarEditCtrl', 	['mechanik','wlasciciel']);
-Utils::addRoute('carEdit',       'CarEditCtrl',     ['mechanik','wlasciciel']);
-Utils::addRoute('carSave',       'CarEditCtrl',  	['mechanik','wlasciciel']);
+Utils::addRoute('carNew', 	     'CarEditCtrl',        	['mechanik','wlasciciel']);
+Utils::addRoute('carDelete',     'CarEditCtrl',       	['mechanik','wlasciciel']);
+Utils::addRoute('carEdit',       'CarEditCtrl',         ['mechanik','wlasciciel']);
+Utils::addRoute('carSave',       'CarEditCtrl',       	['mechanik','wlasciciel']);
 
 //Wyswietlenie listy klientow i samochodow
 Utils::addRoute('klientList',   'KlientListCtrl',       ['mechanik','wlasciciel']);
 Utils::addRoute('carList',      'CarListCtrl',          ['mechanik','wlasciciel']);
 
-Utils::addRoute('menu',   'MenuCtrl',       ['mechanik','wlasciciel']);
+Utils::addRoute('menu',         'MenuCtrl',             ['mechanik','wlasciciel']);
 //Utils::addRoute('carList',      'CarListCtrl',          ['mechanik','wlasciciel']);

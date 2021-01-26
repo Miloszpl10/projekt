@@ -20,19 +20,22 @@ class FaktEditCtrl {
     // Walidacja danych przed zapisem (nowe dane lub edycja).
     public function validateSave() {
         //0. Pobranie parametrów z walidacją
-        $this->form->faktura_numer = ParamUtils::getFromRequest('faktura_numer', true, 'Błędne wywołanie aplikacji 1');
-        $this->form->koszt = ParamUtils::getFromRequest('koszt', true, 'Błędne wywołanie aplikacji 2');
+        $this->form->faktura_numer = ParamUtils::getFromRequest('faktura_numer', true, 'Błędne wywołanie aplikacji 2');
+        $this->form->koszt = ParamUtils::getFromRequest('koszt', true, 'Błędne wywołanie aplikacji 3');
         $this->form->termin_platnosci = ParamUtils::getFromRequest('termin_platnosci', true, 'Błędne wywołanie aplikacji 3');
 
         if (App::getMessages()->isError())
             return false;
 
         // 1. sprawdzenie czy wartości wymagane nie są puste
+        if (empty(trim($this->form->faktura_numer))) {
+            Utils::addErrorMessage('Wprowadź wprowadz numer faktury');
+        }
         if (empty(trim($this->form->koszt))) {
             Utils::addErrorMessage('Wprowadź koszt');
         }
         if (empty(trim($this->form->termin_platnosci))) {
-            Utils::addErrorMessage('Wprowadź termin płatności');
+            Utils::addErrorMessage('Wprowadź termin platnosci');
         }
 
         if (App::getMessages()->isError())
@@ -50,7 +53,7 @@ class FaktEditCtrl {
     public function validateEdit() {
         //pobierz parametry na potrzeby wyswietlenia danych do edycji
         //z widoku listy osób (parametr jest wymagany)
-        $this->form->faktura_numer = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji5');
+        $this->form->id_fakt = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji5');
         return !App::getMessages()->isError();
     }
 
@@ -65,9 +68,10 @@ class FaktEditCtrl {
             try {
                 // 2. odczyt z bazy danych osoby o podanym ID (tylko jednego rekordu)
                 $record = App::getDB()->get("faktura", "*", [
-                    "faktura_numer" => $this->form->faktura_numer
+                    "id_fakt" => $this->form->id_fakt
                 ]);
                 // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
+                $this->form->id_fakt = $record['id_fakt'];
                 $this->form->faktura_numer = $record['faktura_numer'];
                 $this->form->koszt = $record['koszt'];
                 $this->form->termin_platnosci = $record['termin_platnosci'];
@@ -89,7 +93,7 @@ class FaktEditCtrl {
             try {
                 // 2. usunięcie rekordu
                 App::getDB()->delete("faktura", [
-                    "faktura_numer" => $this->form->faktura_numer
+                    "id_fakt" => $this->form->id_fakt
                 ]);
                 Utils::addInfoMessage('Pomyślnie usunięto rekord');
             } catch (\PDOException $e) {
@@ -100,7 +104,7 @@ class FaktEditCtrl {
         }
 
         // 3. Przekierowanie na stronę listy osób
-        App::getRouter()->forwardTo('faktList');
+        App::getRouter()->forwardTo('faktHistory');
     }
 
     public function action_faktSave() {
@@ -111,11 +115,12 @@ class FaktEditCtrl {
             try {
 
                 //2.1 Nowy rekord
-                if ($this->form->faktura_numer == '') {
+                if ($this->form->id_fakt == '') {
                     //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 20
                     $count = App::getDB()->count("faktura");
                     if ($count <= 20) {
                         App::getDB()->insert("faktura", [
+                            "faktura_numer" => $this->form->faktura_numer,
                             "koszt" => $this->form->koszt,
                             "termin_platnosci" => $this->form->termin_platnosci
                         ]);
@@ -128,10 +133,11 @@ class FaktEditCtrl {
                 } else {
                     //2.2 Edycja rekordu o danym ID
                     App::getDB()->update("faktura", [
+                        "faktura_numer" => $this->form->faktura_numer,
                         "koszt" => $this->form->koszt,
                         "termin_platnosci" => $this->form->termin_platnosci
                             ], [
-                        "faktura_numer" => $this->form->faktura_numer
+                        "id_fakt" => $this->form->id_fakt
                     ]);
                 }
                 Utils::addInfoMessage('Pomyślnie zapisano rekord');
@@ -142,7 +148,7 @@ class FaktEditCtrl {
             }
 
             // 3b. Po zapisie przejdź na stronę listy osób (w ramach tego samego żądania http)
-            App::getRouter()->forwardTo('faktList');
+            App::getRouter()->forwardTo('faktHistory');
         } else {
             // 3c. Gdy błąd walidacji to pozostań na stronie
             $this->generateView();

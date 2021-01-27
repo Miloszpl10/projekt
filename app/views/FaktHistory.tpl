@@ -23,6 +23,7 @@
 <table id="tab_fakt" class="pure-table pure-table-bordered">
 <thead>
 	<tr>
+	    <th>ID Faktury</th>
 		<th>Numer Faktury</th>
 		<th>Koszt</th>
 		<th>Termin płatności</th>
@@ -33,6 +34,7 @@
 {foreach $fakt as $f}
 {strip}
 	<tr>
+	    <td>{$f["id_fakt"]}</td>
 		<td>{$f["faktura_numer"]}</td>
 		<td>{$f["koszt"]}</td>
 		<td>{$f["termin_platnosci"]}</td>

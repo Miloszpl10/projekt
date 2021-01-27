@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-25 18:48:51
+/* Smarty version 3.1.34-dev-7, created on 2021-01-27 23:10:56
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\FaktHistory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_600f048371eb21_86629771',
+  'unifunc' => 'content_6011e4f031afb2_77694219',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '74e9d733e0bb4b7434770df9027153dade65113c' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\FaktHistory.tpl',
-      1 => 1611596930,
+      1 => 1611785454,
       2 => 'file',
     ),
   ),
@@ -20,30 +20,30 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_600f048371eb21_86629771 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6011e4f031afb2_77694219 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1639245114600f0483713bc6_11766856', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17913899556011e4f0259d01_26749987', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_665160052600f0483717884_22313573', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_971204666011e4f026cc27_61930310', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'top'} */
-class Block_1639245114600f0483713bc6_11766856 extends Smarty_Internal_Block
+class Block_17913899556011e4f0259d01_26749987 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'top' => 
   array (
-    0 => 'Block_1639245114600f0483713bc6_11766856',
+    0 => 'Block_17913899556011e4f0259d01_26749987',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,12 +67,12 @@ faktHistory">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_665160052600f0483717884_22313573 extends Smarty_Internal_Block
+class Block_971204666011e4f026cc27_61930310 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'bottom' => 
   array (
-    0 => 'Block_665160052600f0483717884_22313573',
+    0 => 'Block_971204666011e4f026cc27_61930310',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -87,6 +87,7 @@ faktNew">+ Nowa faktura</a>
 <table id="tab_fakt" class="pure-table pure-table-bordered">
 <thead>
 	<tr>
+	    <th>ID Faktury</th>
 		<th>Numer Faktury</th>
 		<th>Koszt</th>
 		<th>Termin płatności</th>
@@ -100,7 +101,8 @@ $_smarty_tpl->tpl_vars['f']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['f']->value) {
 $_smarty_tpl->tpl_vars['f']->do_else = false;
 ?>
-<tr><td><?php echo $_smarty_tpl->tpl_vars['f']->value["faktura_numer"];?>
+<tr><td><?php echo $_smarty_tpl->tpl_vars['f']->value["id_fakt"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['f']->value["faktura_numer"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['f']->value["koszt"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['f']->value["termin_platnosci"];?>
 </td><td><a class="button-small pure-button button-secondary" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>

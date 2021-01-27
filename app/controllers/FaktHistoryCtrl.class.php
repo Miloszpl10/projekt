@@ -51,6 +51,7 @@ class FaktHistoryCtrl {
 
         try {
             $this->records = App::getDB()->select("faktura", [
+                "id_fakt",
                 "faktura_numer",
                 "koszt",
                 "termin_platnosci",

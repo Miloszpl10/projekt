@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-23 11:26:42
+/* Smarty version 3.1.34-dev-7, created on 2021-01-28 22:40:02
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\LoginView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_600bf9e21636e8_82780762',
+  'unifunc' => 'content_60132f32059f14_30803282',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a15c64dce700657563718bc7691399da233068e' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\LoginView.tpl',
-      1 => 1611397546,
+      1 => 1611869996,
       2 => 'file',
     ),
   ),
@@ -20,50 +20,37 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_600bf9e21636e8_82780762 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_loadInheritance();
-$_smarty_tpl->inheritance->init($_smarty_tpl, true);
-?>
+function content_60132f32059f14_30803282 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/projekt/app/views/templates/css/LoginView.css">
+</head>
 
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1309996858600bf9e2160165_55255017', 'top');
-?>
+<body>
+    <div class="login-dark">
+        <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+login" method="post">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            <div class="form-group"><input class="form-control" id="id_login" type="text" name="login" placeholder="User" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->login;?>
+"/></div>
+            <div class="form-group"><input class="form-control" id="id_pass" type="password" name="pass" placeholder="Password"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div><a href="#" class="forgot">Forgot your email or password?</a></form>
+    </div>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
+>
+</body>
 
-<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
-}
-/* {block 'top'} */
-class Block_1309996858600bf9e2160165_55255017 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'top' => 
-  array (
-    0 => 'Block_1309996858600bf9e2160165_55255017',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
-
-<form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-login" method="post" class="pure-form pure-form-aligned bottom-margin">
-	<legend>Logowanie do systemu</legend>
-	<fieldset>
-        <div class="pure-control-group">
-			<label for="id_login">login: </label>
-			<input id="id_login" type="text" name="login" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->login;?>
-"/>
-		</div>
-        <div class="pure-control-group">
-			<label for="id_pass">pass: </label>
-			<input id="id_pass" type="password" name="pass" /><br />
-		</div>
-		<div class="pure-controls">
-			<input type="submit" value="zaloguj" class="pure-button pure-button-primary"/>
-		</div>
-	</fieldset>
-</form>	
-<?php
-}
-}
-/* {/block 'top'} */
+</html><?php }
 }

@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="pl">
-<head>
+<head>    
     <meta charset="utf-8">
     <title>Aplikacja</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">	
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
    </head>
    <body>
@@ -26,20 +27,9 @@
 
 {block name=bottom} {/block}
 
-{block name=messages}
+{include file="messages.tpl"}
+{block name=messages}{/block}
 
-{if $msgs->isMessage()}
-<div class="messages bottom-margin">
-	<ul>
-	{foreach $msgs->getMessages() as $msg}
-	{strip}
-		<li class="msg {if $msg->isError()}error{/if} {if $msg->isWarning()}warning{/if} {if $msg->isInfo()}info{/if}">{$msg->text}</li>
-	{/strip}
-	{/foreach}
-	</ul>
-</div>
-{/if}
-{/block}
-
+{include file="footer.tpl"}
     </body>
     </html>

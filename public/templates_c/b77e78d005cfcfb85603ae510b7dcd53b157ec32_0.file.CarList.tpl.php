@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-26 21:50:14
+/* Smarty version 3.1.34-dev-7, created on 2021-01-30 00:35:25
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\CarList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_6010808689b894_01121701',
+  'unifunc' => 'content_60149bbd9a9512_55095927',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b77e78d005cfcfb85603ae510b7dcd53b157ec32' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\CarList.tpl',
-      1 => 1611694213,
+      1 => 1611963322,
       2 => 'file',
     ),
   ),
@@ -20,30 +20,30 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6010808689b894_01121701 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60149bbd9a9512_55095927 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_62026161060108086891251_50503366', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_90931391260149bbd983bb4_26773914', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1640964470601080868947d6_18097642', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_49865211360149bbd986fd9_82871621', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'top'} */
-class Block_62026161060108086891251_50503366 extends Smarty_Internal_Block
+class Block_90931391260149bbd983bb4_26773914 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'top' => 
   array (
-    0 => 'Block_62026161060108086891251_50503366',
+    0 => 'Block_90931391260149bbd983bb4_26773914',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,12 +67,12 @@ carList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_1640964470601080868947d6_18097642 extends Smarty_Internal_Block
+class Block_49865211360149bbd986fd9_82871621 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'bottom' => 
   array (
-    0 => 'Block_1640964470601080868947d6_18097642',
+    0 => 'Block_49865211360149bbd986fd9_82871621',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -87,6 +87,7 @@ carNew">+ Nowy samochód</a>
 <table id="tab_car" class="pure-table pure-table-bordered">
 <thead>
 	<tr>
+	    <th>ID samochodu</th>
 		<th>VIM Samochodu</th>
 		<th>Marka</th>
 		<th>Model</th>
@@ -101,14 +102,15 @@ $_smarty_tpl->tpl_vars['c']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['c']->value) {
 $_smarty_tpl->tpl_vars['c']->do_else = false;
 ?>
-<tr><td><?php echo $_smarty_tpl->tpl_vars['c']->value["samochod_vim"];?>
+<tr><td><?php echo $_smarty_tpl->tpl_vars['c']->value["id_car"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['c']->value["samochod_vim"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['c']->value["marka"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['c']->value["model"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['c']->value["rok"];?>
 </td><td><a class="button-small pure-button button-secondary" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-carEdit/<?php echo $_smarty_tpl->tpl_vars['c']->value['samochod_vim'];?>
+carEdit/<?php echo $_smarty_tpl->tpl_vars['c']->value['id_car'];?>
 ">Edytuj</a>&nbsp;<a class="button-small pure-button button-warning" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-carDelete/<?php echo $_smarty_tpl->tpl_vars['c']->value['samochod_vim'];?>
+carDelete/<?php echo $_smarty_tpl->tpl_vars['c']->value['id_car'];?>
 ">Usuń</a></td></tr>
 <?php
 }

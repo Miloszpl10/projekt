@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-26 21:58:26
+/* Smarty version 3.1.34-dev-7, created on 2021-01-30 00:40:48
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\KlientList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60108272b83269_77647466',
+  'unifunc' => 'content_60149d006cd907_84531423',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8d0abbb44efe95ada8d0403348186ecf23e27eb7' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\KlientList.tpl',
-      1 => 1611694550,
+      1 => 1611963617,
       2 => 'file',
     ),
   ),
@@ -20,30 +20,30 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60108272b83269_77647466 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60149d006cd907_84531423 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_86805016960108272b67368_57661091', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10253803060149d006bc420_24323587', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15521361160108272b6f868_11008631', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_73790252360149d006bf577_65249481', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'top'} */
-class Block_86805016960108272b67368_57661091 extends Smarty_Internal_Block
+class Block_10253803060149d006bc420_24323587 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'top' => 
   array (
-    0 => 'Block_86805016960108272b67368_57661091',
+    0 => 'Block_10253803060149d006bc420_24323587',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,12 +67,12 @@ klientList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_15521361160108272b6f868_11008631 extends Smarty_Internal_Block
+class Block_73790252360149d006bf577_65249481 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'bottom' => 
   array (
-    0 => 'Block_15521361160108272b6f868_11008631',
+    0 => 'Block_73790252360149d006bf577_65249481',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -87,7 +87,7 @@ klientNew">+ Nowa osoba</a>
 <table id="tab_klient" class="pure-table pure-table-bordered">
 <thead>
 	<tr>
-		<th>wlasciciel_id</th>
+		<th>ID Wlasciciela</th>
 		<th>nazwisko</th>
 		<th>telefon</th>
 		<th>samochod_vim</th>

@@ -20,6 +20,7 @@ class KlientEditCtrl {
     // Walidacja danych przed zapisem (nowe dane lub edycja).
     public function validateSave() {
         //0. Pobranie parametrów z walidacją
+        $this->form->wlasciciel_id = ParamUtils::getFromRequest('wlasciciel_id', true, 'Błędne wywołanie aplikacji 2');
         $this->form->nazwisko = ParamUtils::getFromRequest('nazwisko', true, 'Błędne wywołanie aplikacji 2');
         $this->form->telefon = ParamUtils::getFromRequest('telefon', true, 'Błędne wywołanie aplikacji 3');
 
@@ -62,7 +63,6 @@ class KlientEditCtrl {
                     "wlasciciel_id" => $this->form->wlasciciel_id
                 ]);
                 // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
-                $this->form->wlasciciel_id = $record['wlasciciel_id'];
                 $this->form->nazwisko = $record['nazwisko'];
                 $this->form->telefon = $record['telefon'];
             } catch (\PDOException $e) {
@@ -105,7 +105,7 @@ class KlientEditCtrl {
             try {
 
                 //2.1 Nowy rekord
-                if ($this->form->samochod_vim == '') {
+                if ($this->form->wlasciciel_id == '') {
                     //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 20
                     $count = App::getDB()->count("wlasciciel");
                     if ($count <= 20) {

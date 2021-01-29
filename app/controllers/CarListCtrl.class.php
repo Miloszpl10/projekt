@@ -57,6 +57,7 @@ class CarListCtrl {
 
         try {
             $this->records = App::getDB()->select("samochod", [
+                "id_car",
                 "samochod_vim",
                 "marka",
                 "model",

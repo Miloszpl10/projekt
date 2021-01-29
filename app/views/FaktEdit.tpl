@@ -23,7 +23,7 @@
 			<a class="pure-button button-secondary" href="{$conf->action_root}faktHistory">Powrót</a>
 		</div>
 	</fieldset>
-    <input type="hidden" name="if_fakt" value="{$form->id_fakt}">
+    <input type="hidden" name="id_fakt" value="{$form->id_fakt}">
 </form>
 </div>
 

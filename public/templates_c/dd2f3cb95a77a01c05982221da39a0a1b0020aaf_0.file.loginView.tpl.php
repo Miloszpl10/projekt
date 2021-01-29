@@ -1,26 +1,27 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-29 22:38:18
+/* Smarty version 3.1.34-dev-7, created on 2021-01-29 23:11:41
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\templates\loginView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_6014804a892e08_05969473',
+  'unifunc' => 'content_6014881d6bd661_15941594',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dd2f3cb95a77a01c05982221da39a0a1b0020aaf' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\templates\\loginView.tpl',
-      1 => 1611956206,
+      1 => 1611958300,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_6014804a892e08_05969473 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6014881d6bd661_15941594 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -43,7 +44,8 @@ login" method="post">
             <div class="form-group"><input class="form-control" id="id_login" type="text" name="login" placeholder="User" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->login;?>
 "/></div>
             <div class="form-group"><input class="form-control" id="id_pass" type="password" name="pass" placeholder="Password"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div><a href="#" class="forgot">Forgot your email or password?</a></form>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div><a href="#" class="forgot"><?php $_smarty_tpl->_subTemplateRender("file:messages.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>Forgot your email or password?</a></form>
     </div>
     <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"><?php echo '</script'; ?>

@@ -20,6 +20,7 @@ class FaktEditCtrl {
     // Walidacja danych przed zapisem (nowe dane lub edycja).
     public function validateSave() {
         //0. Pobranie parametrów z walidacją
+        $this->form->id_fakt = ParamUtils::getFromRequest('id_fakt', true, 'Błędne wywołanie aplikacji 1');
         $this->form->faktura_numer = ParamUtils::getFromRequest('faktura_numer', true, 'Błędne wywołanie aplikacji 2');
         $this->form->koszt = ParamUtils::getFromRequest('koszt', true, 'Błędne wywołanie aplikacji 3');
         $this->form->termin_platnosci = ParamUtils::getFromRequest('termin_platnosci', true, 'Błędne wywołanie aplikacji 3');
@@ -71,7 +72,6 @@ class FaktEditCtrl {
                     "id_fakt" => $this->form->id_fakt
                 ]);
                 // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
-                $this->form->id_fakt = $record['id_fakt'];
                 $this->form->faktura_numer = $record['faktura_numer'];
                 $this->form->koszt = $record['koszt'];
                 $this->form->termin_platnosci = $record['termin_platnosci'];

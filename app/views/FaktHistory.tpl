@@ -39,9 +39,9 @@
 		<td>{$f["koszt"]}</td>
 		<td>{$f["termin_platnosci"]}</td>
 		<td>
-			<a class="button-small pure-button button-secondary" href="{$conf->action_url}faktEdit/{$f['faktura_numer']}">Edytuj</a>
+			<a class="button-small pure-button button-secondary" href="{$conf->action_url}faktEdit/{$f['id_fakt']}">Edytuj</a>
 			&nbsp;
-			<a class="button-small pure-button button-warning" href="{$conf->action_url}faktDelete/{$f['faktura_numer']}">Usuń</a>
+			<a class="button-small pure-button button-warning" href="{$conf->action_url}faktDelete/{$f['id_fakt']}">Usuń</a>
 		</td>
 	</tr>
 {/strip}

@@ -20,6 +20,7 @@ class CarEditCtrl {
     // Walidacja danych przed zapisem (nowe dane lub edycja).
     public function validateSave() {
         //0. Pobranie parametrów z walidacją
+        $this->form->id_car = ParamUtils::getFromRequest('id_car', true, 'Błędne wywołanie aplikacji 1');
         $this->form->samochod_vim = ParamUtils::getFromRequest('samochod_vim', true, 'Błędne wywołanie aplikacji 1');
         $this->form->marka = ParamUtils::getFromRequest('marka', true, 'Błędne wywołanie aplikacji 2');
         $this->form->model = ParamUtils::getFromRequest('model', true, 'Błędne wywołanie aplikacji 3');
@@ -29,6 +30,9 @@ class CarEditCtrl {
             return false;
 
         // 1. sprawdzenie czy wartości wymagane nie są puste
+        if (empty(trim($this->form->samochod_vim))) {
+            Utils::addErrorMessage('Vim samochodu');
+        }
         if (empty(trim($this->form->marka))) {
             Utils::addErrorMessage('Wprowadź marke');
         }
@@ -56,7 +60,7 @@ class CarEditCtrl {
     public function validateEdit() {
         //pobierz parametry na potrzeby wyswietlenia danych do edycji
         //z widoku listy osób (parametr jest wymagany)
-        $this->form->samochod_vim = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji5');
+        $this->form->id_car = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji5');
         return !App::getMessages()->isError();
     }
 
@@ -71,7 +75,7 @@ class CarEditCtrl {
             try {
                 // 2. odczyt z bazy danych osoby o podanym ID (tylko jednego rekordu)
                 $record = App::getDB()->get("samochod", "*", [
-                    "samochod_vim" => $this->form->samochod_vim
+                    "id_car" => $this->form->id_car
                 ]);
                 // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
                 $this->form->samochod_vim = $record['samochod_vim'];
@@ -96,7 +100,7 @@ class CarEditCtrl {
             try {
                 // 2. usunięcie rekordu
                 App::getDB()->delete("samochod", [
-                    "samochod_vim" => $this->form->samochod_vim
+                    "id_car" => $this->form->id_car
                 ]);
                 Utils::addInfoMessage('Pomyślnie usunięto rekord');
             } catch (\PDOException $e) {
@@ -118,11 +122,12 @@ class CarEditCtrl {
             try {
 
                 //2.1 Nowy rekord
-                if ($this->form->samochod_vim == '') {
+                if ($this->form->id_car == '') {
                     //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 20
                     $count = App::getDB()->count("samochod");
                     if ($count <= 20) {
                         App::getDB()->insert("samochod", [
+                            "samochod_vim" => $this->form->samochod_vim,
                             "marka" => $this->form->marka,
                             "model" => $this->form->model,
                             "rok" => $this->form->rok
@@ -136,11 +141,12 @@ class CarEditCtrl {
                 } else {
                     //2.2 Edycja rekordu o danym ID
                     App::getDB()->update("samochod", [
+                        "samochod_vim" => $this->form->samochod_vim,
                         "marka" => $this->form->marka,
                         "model" => $this->form->model,
                         "rok" => $this->form->rok
                             ], [
-                        "samochod_vim" => $this->form->samochod_vim
+                        "id_car" => $this->form->id_car
                     ]);
                 }
                 Utils::addInfoMessage('Pomyślnie zapisano rekord');

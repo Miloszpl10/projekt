@@ -27,7 +27,7 @@
 			<a class="pure-button button-secondary" href="{$conf->action_root}carList">Powrót</a>
 		</div>
 	</fieldset>
-    <input type="hidden" name="samochd_vim" value="{$form->samochod_vim}">
+    <input type="hidden" name="id_car" value="{$form->id_car}">
 </form>
 </div>
 

@@ -23,6 +23,7 @@
 <table id="tab_car" class="pure-table pure-table-bordered">
 <thead>
 	<tr>
+	    <th>ID samochodu</th>
 		<th>VIM Samochodu</th>
 		<th>Marka</th>
 		<th>Model</th>
@@ -34,14 +35,15 @@
 {foreach $car as $c}
 {strip}
 	<tr>
+		<td>{$c["id_car"]}</td>
 		<td>{$c["samochod_vim"]}</td>
 		<td>{$c["marka"]}</td>
 		<td>{$c["model"]}</td>
 		<td>{$c["rok"]}</td>
 		<td>
-			<a class="button-small pure-button button-secondary" href="{$conf->action_url}carEdit/{$c['samochod_vim']}">Edytuj</a>
+			<a class="button-small pure-button button-secondary" href="{$conf->action_url}carEdit/{$c['id_car']}">Edytuj</a>
 			&nbsp;
-			<a class="button-small pure-button button-warning" href="{$conf->action_url}carDelete/{$c['samochod_vim']}">Usuń</a>
+			<a class="button-small pure-button button-warning" href="{$conf->action_url}carDelete/{$c['id_car']}">Usuń</a>
 		</td>
 	</tr>
 {/strip}

@@ -23,7 +23,7 @@
 <table id="tab_klient" class="pure-table pure-table-bordered">
 <thead>
 	<tr>
-		<th>wlasciciel_id</th>
+		<th>ID Wlasciciela</th>
 		<th>nazwisko</th>
 		<th>telefon</th>
 		<th>samochod_vim</th>

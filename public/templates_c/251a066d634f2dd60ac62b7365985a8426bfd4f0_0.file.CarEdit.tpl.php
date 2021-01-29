@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-29 22:47:51
+/* Smarty version 3.1.34-dev-7, created on 2021-01-29 23:02:15
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\CarEdit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60148287f36081_27037480',
+  'unifunc' => 'content_601485e7493815_06523049',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '251a066d634f2dd60ac62b7365985a8426bfd4f0' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\CarEdit.tpl',
-      1 => 1611956870,
+      1 => 1611957599,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60148287f36081_27037480 (Smarty_Internal_Template $_smarty_tpl) {
+function content_601485e7493815_06523049 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_177047537660148287f2edd9_74775191', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_601659636601485e748a536_12545741', 'top');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'top'} */
-class Block_177047537660148287f2edd9_74775191 extends Smarty_Internal_Block
+class Block_601659636601485e748a536_12545741 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'top' => 
   array (
-    0 => 'Block_177047537660148287f2edd9_74775191',
+    0 => 'Block_601659636601485e748a536_12545741',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -76,7 +76,7 @@ carSave" method="post" class="pure-form pure-form-aligned">
 carList">Powrót</a>
 		</div>
 	</fieldset>
-    <input type="hidden" name="samochd_vim" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->samochod_vim;?>
+    <input type="hidden" name="id_car" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->id_car;?>
 ">
 </form>
 </div>

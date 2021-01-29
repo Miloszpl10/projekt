@@ -20,7 +20,7 @@ class CarEditCtrl {
     // Walidacja danych przed zapisem (nowe dane lub edycja).
     public function validateSave() {
         //0. Pobranie parametrów z walidacją
- //       $this->form->samochod_vim = ParamUtils::getFromRequest('samochod_vim', true, 'Błędne wywołanie aplikacji 1');
+        $this->form->samochod_vim = ParamUtils::getFromRequest('samochod_vim', true, 'Błędne wywołanie aplikacji 1');
         $this->form->marka = ParamUtils::getFromRequest('marka', true, 'Błędne wywołanie aplikacji 2');
         $this->form->model = ParamUtils::getFromRequest('model', true, 'Błędne wywołanie aplikacji 3');
         $this->form->rok = ParamUtils::getFromRequest('rok', true, 'Błędne wywołanie aplikacji 4');

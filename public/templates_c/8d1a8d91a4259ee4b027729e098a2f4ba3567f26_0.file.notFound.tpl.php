@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-29 22:36:59
-  from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\templates\NotFound.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2021-01-29 22:39:02
+  from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\templates\notFound.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60147ffbed6cd4_36213914',
+  'unifunc' => 'content_601480765ff6f3_03020101',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd057323cbe61244c14f100979ae58a1d17da3e24' => 
+    '8d1a8d91a4259ee4b027729e098a2f4ba3567f26' => 
     array (
-      0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\templates\\NotFound.tpl',
+      0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\templates\\notFound.tpl',
       1 => 1611956102,
       2 => 'file',
     ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60147ffbed6cd4_36213914 (Smarty_Internal_Template $_smarty_tpl) {
+function content_601480765ff6f3_03020101 (Smarty_Internal_Template $_smarty_tpl) {
 ?>  <!DOCTYPE html>
   <html lang="pl">
   <head>

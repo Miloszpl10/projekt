@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-29 22:36:47
-  from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\LoginView.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2021-01-29 22:38:18
+  from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\templates\loginView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60147fef6cd139_42572139',
+  'unifunc' => 'content_6014804a892e08_05969473',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '5a15c64dce700657563718bc7691399da233068e' => 
+    'dd2f3cb95a77a01c05982221da39a0a1b0020aaf' => 
     array (
-      0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\LoginView.tpl',
+      0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\templates\\loginView.tpl',
       1 => 1611956206,
       2 => 'file',
     ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60147fef6cd139_42572139 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6014804a892e08_05969473 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 

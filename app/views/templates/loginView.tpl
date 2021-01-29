@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <div class="login-dark">
         <form action="{$conf->action_root}login" method="post">
             <h2 class="sr-only">Login Form</h2>
@@ -21,6 +22,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

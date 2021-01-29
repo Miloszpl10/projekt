@@ -7,6 +7,10 @@
 	<fieldset>
 		<legend>Dane samochodu</legend>
 		<div class="pure-control-group">
+            <label for="samochod_vim">Vim samochodu</label>
+            <input id="samochod_vim" type="text" placeholder="Vim samochodu" name="samochod_vim" value="{$form->samochod_vim}">
+        </div>
+		<div class="pure-control-group">
             <label for="marka">Marka</label>
             <input id="marka" type="text" placeholder="Marka" name="marka" value="{$form->marka}">
         </div>

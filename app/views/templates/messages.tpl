@@ -1,3 +1,5 @@
+ <link rel="stylesheet" href="/projekt/app/views/templates/css/Messages.css">
+
 {if $msgs->isMessage()}
 <div class="messages bottom-margin">
 	<ul>

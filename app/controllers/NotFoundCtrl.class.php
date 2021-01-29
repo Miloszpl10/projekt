@@ -11,7 +11,7 @@ class NotFoundCtrl {
 
     public function action_notFound() {
 
-        App::getSmarty()->display("NotFound.tpl");
+        App::getSmarty()->display("notFound.tpl");
 
     }
 

@@ -27,8 +27,8 @@
 
 {block name=bottom} {/block}
 
+
 {include file="messages.tpl"}
-{block name=messages}{/block}
 
 {include file="footer.tpl"}
     </body>

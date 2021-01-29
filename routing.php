@@ -40,5 +40,3 @@ Utils::addRoute('carSave',       'CarEditCtrl',       	['mechanik','wlasciciel']
 Utils::addRoute('klientList',   'KlientListCtrl',       ['mechanik','wlasciciel']);
 Utils::addRoute('carList',      'CarListCtrl',          ['mechanik','wlasciciel']);
 
-Utils::addRoute('menu',         'MenuCtrl',             ['mechanik','wlasciciel']);
-//Utils::addRoute('carList',      'CarListCtrl',          ['mechanik','wlasciciel']);

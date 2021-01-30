@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <title>Aplikacja</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">	
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <link rel="stylesheet" href=""/projekt/app/views/templates/css/Style.css">
    </head>
    <body>
-
+<div class="container contact-form ">
 
 <div class="pure-menu pure-menu-horizontal bottom-margin">
 	<a href="{$conf->action_root}carList" class="pure-menu-heading pure-menu-link">Car</a>
@@ -29,7 +30,8 @@
 
 
 {include file="messages.tpl"}
-
+</div>
 {include file="footer.tpl"}
+
     </body>
     </html>

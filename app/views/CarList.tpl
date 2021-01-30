@@ -6,7 +6,7 @@
 <form class="pure-form pure-form-stacked" action="{$conf->action_url}carList">
 	<legend>Opcje wyszukiwania</legend>
 	<fieldset>
-		<input type="text" placeholder="marka samochodu" name="sf_marka" value="{$searchForm->marka}" /><br />
+		<input type="text" placeholder="marka samochodu" name="sf_marka" value="{$searchForm->marka}" />
 		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
 	</fieldset>
 </form>
@@ -28,6 +28,7 @@
 		<th>Marka</th>
 		<th>Model</th>
 		<th>Rok</th>
+		<th>Usterka</th>
 		<th>Opcje</th>
 	</tr>
 </thead>
@@ -40,6 +41,7 @@
 		<td>{$c["marka"]}</td>
 		<td>{$c["model"]}</td>
 		<td>{$c["rok"]}</td>
+		<td>{$c["usterka"]}</td>
 		<td>
 			<a class="button-small pure-button button-secondary" href="{$conf->action_url}carEdit/{$c['id_car']}">Edytuj</a>
 			&nbsp;

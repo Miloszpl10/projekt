@@ -5,7 +5,7 @@
 	padding: 1em;
 	margin-bottom: 0.5em;
 	box-shadow: 0.2em 0.2em 0.4em #ccc;
-	width: 22em;
+	width: 20em;
 }
 .error{	background-color: #f88; }
 .warning{ background-color: #fd2; }

@@ -6,7 +6,7 @@
 <form class="pure-form pure-form-stacked" action="{$conf->action_url}klientList">
 	<legend>Opcje wyszukiwania</legend>
 	<fieldset>
-		<input type="text" placeholder="Nazwisko" name="sf_nazwisko" value="{$searchForm->nazwisko}" /><br />
+		<input type="text" placeholder="Nazwisko" name="sf_nazwisko" value="{$searchForm->nazwisko}" />
 		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
 	</fieldset>
 </form>
@@ -26,7 +26,6 @@
 		<th>ID Wlasciciela</th>
 		<th>nazwisko</th>
 		<th>telefon</th>
-		<th>samochod_vim</th>
 		<th>Opcje</th>
 	</tr>
 </thead>
@@ -37,7 +36,6 @@
 		<td>{$k["wlasciciel_id"]}</td>
 		<td>{$k["nazwisko"]}</td>
 		<td>{$k["telefon"]}</td>
-		<td>{$k["samochod_vim"]}</td>
 		<td>
 			<a class="button-small pure-button button-secondary" href="{$conf->action_url}klientEdit/{$k['wlasciciel_id']}">Edytuj</a>
 			&nbsp;

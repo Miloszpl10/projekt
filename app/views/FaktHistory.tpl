@@ -6,7 +6,7 @@
 <form class="pure-form pure-form-stacked" action="{$conf->action_url}faktHistory">
 	<legend>Opcje wyszukiwania</legend>
 	<fieldset>
-		<input type="text" placeholder="numer faktury" name="sf_faktura" value="{$searchForm->faktura_numer}" /><br />
+		<input type="text" placeholder="numer faktury" name="sf_faktura" value="{$searchForm->faktura_numer}" />
 		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
 	</fieldset>
 </form>

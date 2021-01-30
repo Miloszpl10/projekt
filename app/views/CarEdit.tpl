@@ -22,6 +22,10 @@
             <label for="rok">Rok</label>
             <input id="rok" type="text" placeholder="Rok" name="rok" value="{$form->rok}">
         </div>
+        <div class="pure-control-group">
+            <label for="usterka">Usterka</label>
+            <input id="rok" type="text" placeholder="Usterka" name="usterka" value="{$form->usterka}">
+        </div>
 		<div class="pure-controls">
 			<input type="submit" class="pure-button pure-button-primary" value="Zapisz"/>
 			<a class="pure-button button-secondary" href="{$conf->action_root}carList">Powrót</a>

@@ -60,7 +60,6 @@ class KlientListCtrl {
                 "wlasciciel_id",
                 "nazwisko",
                 "telefon",
-                "samochod_vim",
                     ], $where);
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');

@@ -62,6 +62,7 @@ class CarListCtrl {
                 "marka",
                 "model",
                 "rok",
+                "usterka",
                     ], $where);
         } catch (\PDOException $e) {
             Utils::addErrorMessage('Wystąpił błąd podczas pobierania rekordów');

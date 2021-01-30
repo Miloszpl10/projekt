@@ -25,6 +25,7 @@ class CarEditCtrl {
         $this->form->marka = ParamUtils::getFromRequest('marka', true, 'Błędne wywołanie aplikacji 2');
         $this->form->model = ParamUtils::getFromRequest('model', true, 'Błędne wywołanie aplikacji 3');
         $this->form->rok = ParamUtils::getFromRequest('rok', true, 'Błędne wywołanie aplikacji 4');
+        $this->form->usterka = ParamUtils::getFromRequest('usterka', true, 'Błędne wywołanie aplikacji 4');
 
         if (App::getMessages()->isError())
             return false;
@@ -41,6 +42,9 @@ class CarEditCtrl {
         }
         if (empty(trim($this->form->rok))) {
             Utils::addErrorMessage('Wprowadź rok');
+        }
+        if (empty(trim($this->form->usterka))) {
+            Utils::addErrorMessage('Wprowadź usterke');
         }
 
         if (App::getMessages()->isError())
@@ -82,6 +86,7 @@ class CarEditCtrl {
                 $this->form->marka = $record['marka'];
                 $this->form->model = $record['model'];
                 $this->form->rok = $record['rok'];
+                $this->form->usterka = $record['usterka'];
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
                 if (App::getConf()->debug)
@@ -130,7 +135,8 @@ class CarEditCtrl {
                             "samochod_vim" => $this->form->samochod_vim,
                             "marka" => $this->form->marka,
                             "model" => $this->form->model,
-                            "rok" => $this->form->rok
+                            "rok" => $this->form->rok,
+                            "usterka" => $this->form->usterka
                         ]);
                     } else { //za dużo rekordów
                         // Gdy za dużo rekordów to pozostań na stronie
@@ -144,7 +150,8 @@ class CarEditCtrl {
                         "samochod_vim" => $this->form->samochod_vim,
                         "marka" => $this->form->marka,
                         "model" => $this->form->model,
-                        "rok" => $this->form->rok
+                        "rok" => $this->form->rok,
+                        "usterka" => $this->form->usterka
                             ], [
                         "id_car" => $this->form->id_car
                     ]);

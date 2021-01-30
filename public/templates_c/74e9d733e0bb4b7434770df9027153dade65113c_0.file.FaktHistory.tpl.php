@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-30 00:35:34
+/* Smarty version 3.1.34-dev-7, created on 2021-01-30 03:11:05
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\FaktHistory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60149bc65496c3_22119894',
+  'unifunc' => 'content_6014c039a01fd4_88712867',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '74e9d733e0bb4b7434770df9027153dade65113c' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\FaktHistory.tpl',
-      1 => 1611963313,
+      1 => 1611972585,
       2 => 'file',
     ),
   ),
@@ -20,30 +20,30 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60149bc65496c3_22119894 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6014c039a01fd4_88712867 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4605215760149bc653a8a9_52411394', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12957799536014c0399ecbe5_27438409', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_197292313060149bc653d900_44714928', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13721676076014c0399f22f0_22174944', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'top'} */
-class Block_4605215760149bc653a8a9_52411394 extends Smarty_Internal_Block
+class Block_12957799536014c0399ecbe5_27438409 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'top' => 
   array (
-    0 => 'Block_4605215760149bc653a8a9_52411394',
+    0 => 'Block_12957799536014c0399ecbe5_27438409',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -56,7 +56,7 @@ faktHistory">
 	<legend>Opcje wyszukiwania</legend>
 	<fieldset>
 		<input type="text" placeholder="numer faktury" name="sf_faktura" value="<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->faktura_numer;?>
-" /><br />
+" />
 		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
 	</fieldset>
 </form>
@@ -67,12 +67,12 @@ faktHistory">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_197292313060149bc653d900_44714928 extends Smarty_Internal_Block
+class Block_13721676076014c0399f22f0_22174944 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'bottom' => 
   array (
-    0 => 'Block_197292313060149bc653d900_44714928',
+    0 => 'Block_13721676076014c0399f22f0_22174944',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

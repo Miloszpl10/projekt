@@ -8,6 +8,8 @@
 	<fieldset>
 		<input type="text" placeholder="Nazwisko" name="sf_nazwisko" value="{$searchForm->nazwisko}" />
 		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
+		<a class="pure-button button-success" href="{$conf->action_root}klientNew">+ Nowa osoba</a>
+
 	</fieldset>
 </form>
 </div>	
@@ -15,12 +17,10 @@
 {/block}
 
 {block name=bottom}
+<link rel="stylesheet" href="/projekt/app/views/templates/css/Table.css">
 
-<div class="bottom-margin">
-<a class="pure-button button-success" href="{$conf->action_root}klientNew">+ Nowa osoba</a>
-</div>	
 
-<table id="tab_klient" class="pure-table pure-table-bordered">
+<table id="tab_klient" class="pure-table pure-table-bordered fl-table">
 <thead>
 	<tr>
 		<th>ID Wlasciciela</th>

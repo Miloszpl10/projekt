@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
     <link rel="stylesheet" href=""/projekt/app/views/templates/css/Style.css">
    </head>
-   <body>
+   <body  style="background: rgba(71, 147, 227, 1)";>
 <div class="container contact-form ">
 
 <div class="pure-menu pure-menu-horizontal bottom-margin">
@@ -24,7 +24,6 @@
 </div>
 
     {block name=top} Domyślna treść zawartości .... {/block}
-
 
 {block name=bottom} {/block}
 

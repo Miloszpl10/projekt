@@ -8,6 +8,8 @@
 	<fieldset>
 		<input type="text" placeholder="numer faktury" name="sf_faktura" value="{$searchForm->faktura_numer}" />
 		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
+		<a class="pure-button button-success" href="{$conf->action_root}faktNew">+ Nowa faktura</a>
+
 	</fieldset>
 </form>
 </div>	
@@ -15,12 +17,10 @@
 {/block}
 
 {block name=bottom}
+<link rel="stylesheet" href="/projekt/app/views/templates/css/Table.css">
 
-<div class="bottom-margin">
-<a class="pure-button button-success" href="{$conf->action_root}faktNew">+ Nowa faktura</a>
-</div>	
 
-<table id="tab_fakt" class="pure-table pure-table-bordered">
+<table id="tab_fakt" class="pure-table pure-table-bordered fl-table">
 <thead>
 	<tr>
 	    <th>ID Faktury</th>
@@ -48,5 +48,6 @@
 {/foreach}
 </tbody>
 </table>
+
 
 {/block}

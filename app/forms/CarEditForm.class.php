@@ -8,4 +8,6 @@ class CarEditForm {
 	public $marka;
 	public $model;
 	public $rok;
+	public $usterka;
+
 }

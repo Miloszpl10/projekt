@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-30 03:11:02
+/* Smarty version 3.1.34-dev-7, created on 2021-01-30 03:50:43
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\KlientList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_6014c036337536_71505571',
+  'unifunc' => 'content_6014c983193807_88584458',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8d0abbb44efe95ada8d0403348186ecf23e27eb7' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\KlientList.tpl',
-      1 => 1611972588,
+      1 => 1611975039,
       2 => 'file',
     ),
   ),
@@ -20,30 +20,30 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6014c036337536_71505571 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6014c983193807_88584458 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4057799436014c03631f702_82013840', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11602032996014c9831732c1_67496398', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15526131186014c0363258b2_10849110', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7392906756014c98317f870_65080569', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'top'} */
-class Block_4057799436014c03631f702_82013840 extends Smarty_Internal_Block
+class Block_11602032996014c9831732c1_67496398 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'top' => 
   array (
-    0 => 'Block_4057799436014c03631f702_82013840',
+    0 => 'Block_11602032996014c9831732c1_67496398',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -58,6 +58,9 @@ klientList">
 		<input type="text" placeholder="Nazwisko" name="sf_nazwisko" value="<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->nazwisko;?>
 " />
 		<button type="submit" class="pure-button pure-button-primary">Filtruj</button>
+		<a class="pure-button button-success" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+klientNew">+ Nowa osoba</a>
+
 	</fieldset>
 </form>
 </div>	
@@ -67,24 +70,21 @@ klientList">
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_15526131186014c0363258b2_10849110 extends Smarty_Internal_Block
+class Block_7392906756014c98317f870_65080569 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'bottom' => 
   array (
-    0 => 'Block_15526131186014c0363258b2_10849110',
+    0 => 'Block_7392906756014c98317f870_65080569',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
+<link rel="stylesheet" href="/projekt/app/views/templates/css/Table.css">
 
-<div class="bottom-margin">
-<a class="pure-button button-success" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-klientNew">+ Nowa osoba</a>
-</div>	
 
-<table id="tab_klient" class="pure-table pure-table-bordered">
+<table id="tab_klient" class="pure-table pure-table-bordered fl-table">
 <thead>
 	<tr>
 		<th>ID Wlasciciela</th>

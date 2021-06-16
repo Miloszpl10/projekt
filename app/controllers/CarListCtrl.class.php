@@ -9,12 +9,16 @@ use app\forms\CarSearchForm;
 
 class CarListCtrl {
 
+    private $offset = 0;
+    private $limit = 2; // limit wyszukiwania rekordów z baz
+    private $page; //strona
     private $form; //dane formularza wyszukiwania
     private $records; //rekordy pobrane z bazy danych
 
     public function __construct() {
         //stworzenie potrzebnych obiektów
         $this->form = new CarSearchForm();
+        $this->page = 0;
     }
 
     public function validate() {
@@ -28,7 +32,7 @@ class CarListCtrl {
         return !App::getMessages()->isError();
     }
 
-    public function action_carList() {
+    public function carListLoad() {
         // 1. Walidacja danych formularza (z pobraniem)
         // - W tej aplikacji walidacja nie jest potrzebna, ponieważ nie wystąpią błedy podczas podawania nazwiska.
         //   Jednak pozostawiono ją, ponieważ gdyby uzytkownik wprowadzał np. datę, lub wartość numeryczną, to trzeba
@@ -51,8 +55,11 @@ class CarListCtrl {
         } else {
             $where = &$search_params;
         }
+
+
         //dodanie frazy sortującej po nazwisku
-        $where ["ORDER"] = "marka";
+       $where ["ORDER"] = "rok";
+       $where ["LIMIT"] = [$this->offset,$this->limit];
         //wykonanie zapytania
 
         try {
@@ -70,10 +77,55 @@ class CarListCtrl {
                 Utils::addErrorMessage($e->getMessage());
         }
 
+
+
+//TUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+    $this->offset = $this->limit;
+    $this->limit=$this->limit+2;
+
+           $pages[0]['pageNumber'] = 1;
+            for ($i = 0; $i < ceil($this->limit / $this->offset); $i++) {
+                $pages[$i]['pageNumber'] = $i + 1;
+            }
+        App::getSmarty()->assign("pages", $pages);
+
+ }
+// Tuuuuuuuuuuuuuuuuuuuuuuuuuuu
+
+
+
         // 4. wygeneruj widok
+    public function action_carList() {
+        $this->carListLoad();
         App::getSmarty()->assign('searchForm', $this->form); // dane formularza (wyszukiwania w tym wypadku)
         App::getSmarty()->assign('car', $this->records);  // lista rekordów z bazy danych
         App::getSmarty()->display('CarList.tpl');
     }
 
+    public function action_carListPart() {
+        $this->carListLoad();
+        App::getSmarty()->assign('searchForm', $this->form);
+        App::getSmarty()->assign('car', $this->records);
+        App::getSmarty()->display('CarListTable.tpl');
+    }
+
+
+
+/*
+    $this->offset = $this->limit;
+    $this->limit=$this->limit+2;
+
+if ($this->offset == 0){$this->pages =1;}
+else{
+            $pages[0]['pageNumber'] = 1;
+            for ($i = 0; $i < ceil($this->limit / $this->offset); $i++) {
+                $pages[$i]['pageNumber'] = $i + 1;
+            }
+
+            App::getSmarty()->assign("pages", $pages);
 }
+*/
+
+}
+
+

@@ -26,7 +26,7 @@ class FaktHistoryCtrl {
         return !App::getMessages()->isError();
     }
 
-    public function action_faktHistory() {
+    public function faktHistoryLoad() {
         // 1. Walidacja danych formularza (z pobraniem)
 
         $this->validate();
@@ -61,11 +61,20 @@ class FaktHistoryCtrl {
             if (App::getConf()->debug)
                 Utils::addErrorMessage($e->getMessage());
         }
+    }
 
         // 4. wygeneruj widok
+    public function action_FaktHistory() {
+        $this->FaktHistoryLoad();
         App::getSmarty()->assign('searchForm', $this->form); // dane formularza (wyszukiwania w tym wypadku)
         App::getSmarty()->assign('fakt', $this->records);  // lista rekordów z bazy danych
         App::getSmarty()->display('FaktHistory.tpl');
     }
 
+    public function action_FaktHistoryPart() {
+        $this->FaktHistoryLoad();
+        App::getSmarty()->assign('searchForm', $this->form);
+        App::getSmarty()->assign('fakt', $this->records);
+        App::getSmarty()->display('FaktHistoryTable.tpl');
+    }
 }

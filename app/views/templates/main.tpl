@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">	
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
     <link rel="stylesheet" href=""/projekt/app/views/templates/css/Style.css">
+    <script type="text/javascript" src="{$conf->app_url}/js/functions.js"></script>
    </head>
    <body  style="background: rgba(71, 147, 227, 1)";>
 <div class="container contact-form ">
@@ -30,6 +31,8 @@
 
 {include file="messages.tpl"}
 </div>
+{include file="stronnicowanie.tpl"}
+
 {include file="footer.tpl"}
 
     </body>

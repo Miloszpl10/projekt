@@ -1,49 +1,50 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-01-30 03:50:43
+/* Smarty version 3.1.34-dev-7, created on 2021-06-08 18:49:28
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\KlientList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_6014c983193807_88584458',
+  'unifunc' => 'content_60bf9f981a49f1_00304895',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8d0abbb44efe95ada8d0403348186ecf23e27eb7' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\KlientList.tpl',
-      1 => 1611975039,
+      1 => 1623170747,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:KlientListTable.tpl' => 1,
   ),
 ),false)) {
-function content_6014c983193807_88584458 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60bf9f981a49f1_00304895 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11602032996014c9831732c1_67496398', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_111786784360bf9f98184955_69924896', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7392906756014c98317f870_65080569', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_66161633360bf9f98198390_45958707', 'bottom');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'top'} */
-class Block_11602032996014c9831732c1_67496398 extends Smarty_Internal_Block
+class Block_111786784360bf9f98184955_69924896 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'top' => 
   array (
-    0 => 'Block_11602032996014c9831732c1_67496398',
+    0 => 'Block_111786784360bf9f98184955_69924896',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,8 +52,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
 <div class="bottom-margin">
-<form class="pure-form pure-form-stacked" action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-klientList">
+<form id="search-form" class="pure-form pure-form-stacked" onsubmit="ajaxPostForm('search-form','<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+klientListPart','table'); return false;">
 	<legend>Opcje wyszukiwania</legend>
 	<fieldset>
 		<input type="text" placeholder="Nazwisko" name="sf_nazwisko" value="<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->nazwisko;?>
@@ -70,12 +71,12 @@ klientNew">+ Nowa osoba</a>
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_7392906756014c98317f870_65080569 extends Smarty_Internal_Block
+class Block_66161633360bf9f98198390_45958707 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'bottom' => 
   array (
-    0 => 'Block_7392906756014c98317f870_65080569',
+    0 => 'Block_66161633360bf9f98198390_45958707',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -83,37 +84,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 <link rel="stylesheet" href="/projekt/app/views/templates/css/Table.css">
 
-
-<table id="tab_klient" class="pure-table pure-table-bordered fl-table">
-<thead>
-	<tr>
-		<th>ID Wlasciciela</th>
-		<th>nazwisko</th>
-		<th>telefon</th>
-		<th>Opcje</th>
-	</tr>
-</thead>
-<tbody>
-<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['klient']->value, 'k');
-$_smarty_tpl->tpl_vars['k']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['k']->value) {
-$_smarty_tpl->tpl_vars['k']->do_else = false;
+<div id="table">
+<?php $_smarty_tpl->_subTemplateRender("file:KlientListTable.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<tr><td><?php echo $_smarty_tpl->tpl_vars['k']->value["wlasciciel_id"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['k']->value["nazwisko"];?>
-</td><td><?php echo $_smarty_tpl->tpl_vars['k']->value["telefon"];?>
-</td><td><a class="button-small pure-button button-secondary" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-klientEdit/<?php echo $_smarty_tpl->tpl_vars['k']->value['wlasciciel_id'];?>
-">Edytuj</a>&nbsp;<a class="button-small pure-button button-warning" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-klientDelete/<?php echo $_smarty_tpl->tpl_vars['k']->value['wlasciciel_id'];?>
-">Usuń</a></td></tr>
-<?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-</tbody>
-</table>
-
+</div>
 <?php
 }
 }

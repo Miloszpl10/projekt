@@ -28,7 +28,7 @@ class KlientListCtrl {
         return !App::getMessages()->isError();
     }
 
-    public function action_klientList() {
+    public function klientListLoad() {
         // 1. Walidacja danych formularza (z pobraniem)
         // - W tej aplikacji walidacja nie jest potrzebna, ponieważ nie wystąpią błedy podczas podawania nazwiska.
         //   Jednak pozostawiono ją, ponieważ gdyby uzytkownik wprowadzał np. datę, lub wartość numeryczną, to trzeba
@@ -66,11 +66,20 @@ class KlientListCtrl {
             if (App::getConf()->debug)
                 Utils::addErrorMessage($e->getMessage());
         }
+    }
 
         // 4. wygeneruj widok
+    public function action_klientList() {
+        $this->klientListLoad();
         App::getSmarty()->assign('searchForm', $this->form); // dane formularza (wyszukiwania w tym wypadku)
         App::getSmarty()->assign('klient', $this->records);  // lista rekordów z bazy danych
         App::getSmarty()->display('KlientList.tpl');
     }
 
+    public function action_klientListPart() {
+        $this->klientListLoad();
+        App::getSmarty()->assign('searchForm', $this->form);
+        App::getSmarty()->assign('klient', $this->records);
+        App::getSmarty()->display('KlientListTable.tpl');
+    }
 }

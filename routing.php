@@ -24,19 +24,23 @@ Utils::addRoute('faktDelete',    'FaktEditCtrl', 	    ['wlasciciel']);
 Utils::addRoute('faktSave',      'FaktEditCtrl', 	    ['wlasciciel']);
 Utils::addRoute('faktNew',       'FaktEditCtrl', 	    ['wlasciciel']);
 
-//Dostep oraz wporwadzanie danych klient
+//Dostep oraz wprowadzanie danych klient
 Utils::addRoute('klientNew',     'KlientEditCtrl',   	['mechanik','wlasciciel']);
 Utils::addRoute('klientDelete',  'KlientEditCtrl',  	['mechanik','wlasciciel']);
 Utils::addRoute('klientEdit',    'KlientEditCtrl',  	['mechanik','wlasciciel']);
 Utils::addRoute('klientSave',    'KlientEditCtrl',  	['mechanik','wlasciciel']);
 
-//Dostep oraz wporwadzanie danych samochod
+//Dostep oraz wprowadzanie danych samochod
 Utils::addRoute('carNew', 	     'CarEditCtrl',        	['mechanik','wlasciciel']);
 Utils::addRoute('carDelete',     'CarEditCtrl',       	['mechanik','wlasciciel']);
 Utils::addRoute('carEdit',       'CarEditCtrl',         ['mechanik','wlasciciel']);
 Utils::addRoute('carSave',       'CarEditCtrl',       	['mechanik','wlasciciel']);
 
 //Wyswietlenie listy klientow i samochodow
-Utils::addRoute('klientList',   'KlientListCtrl',       ['mechanik','wlasciciel']);
-Utils::addRoute('carList',      'CarListCtrl',          ['mechanik','wlasciciel']);
+Utils::addRoute('klientList',    'KlientListCtrl',       ['mechanik','wlasciciel']);
+Utils::addRoute('carList',       'CarListCtrl',          ['mechanik','wlasciciel']);
 
+//Wyswietlanie list z filtrowaniem ajax
+Utils::addRoute('carListPart',        'CarListCtrl',       	['mechanik','wlasciciel']);
+Utils::addRoute('klientListPart',     'KlientListCtrl',       	['mechanik','wlasciciel']);
+Utils::addRoute('faktHistoryPart',    'FaktHistoryCtrl',       	['wlasciciel']);

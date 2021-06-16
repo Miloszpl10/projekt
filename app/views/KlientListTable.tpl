@@ -19,6 +19,7 @@
 			&nbsp;
 			<a class="button-small pure-button button-warning" onclick="confirmLink('{$conf->action_url}klientDelete/{$k['wlasciciel_id']}','Czy na pewno usunąć rekord ?')">Usuń</a>
 		</td>
+
 	</tr>
 {/strip}
 {/foreach}

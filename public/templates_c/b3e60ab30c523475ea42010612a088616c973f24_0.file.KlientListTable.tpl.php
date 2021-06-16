@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-06-08 18:53:22
+/* Smarty version 3.1.34-dev-7, created on 2021-06-16 21:35:48
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\KlientListTable.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60bfa082666871_32184687',
+  'unifunc' => 'content_60ca529494bd42_17221207',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b3e60ab30c523475ea42010612a088616c973f24' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\KlientListTable.tpl',
-      1 => 1623171200,
+      1 => 1623872144,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60bfa082666871_32184687 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ca529494bd42_17221207 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table id="tab_klient" class="pure-table pure-table-bordered fl-table">
 <thead>
 	<tr>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-06-08 18:16:24
+/* Smarty version 3.1.34-dev-7, created on 2021-06-17 22:50:56
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\CarListTable.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60bf97d8104da9_70015582',
+  'unifunc' => 'content_60cbb5b0a62c38_92233780',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '475faa49f0750d76dfb44f72acbc4a4ea705fa0b' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\CarListTable.tpl',
-      1 => 1623166710,
+      1 => 1623962898,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60bf97d8104da9_70015582 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60cbb5b0a62c38_92233780 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table id="tab_car" class="pure-table pure-table-bordered fl-table">
 <thead>
 	<tr>
@@ -55,5 +55,20 @@ carDelete/<?php echo $_smarty_tpl->tpl_vars['c']->value['id_car'];?>
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </tbody>
-</table><?php }
+</table>
+<div style="text-align: center;">
+	<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['pages']->value, 'page');
+$_smarty_tpl->tpl_vars['page']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['page']->value) {
+$_smarty_tpl->tpl_vars['page']->do_else = false;
+?>
+		<input type="button" value="<?php echo $_smarty_tpl->tpl_vars['page']->value['pageNumber'];?>
+" name="pageNumber"
+			   onclick="ajaxPostForm('search-form','<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+carListPart?','tab_car'); return false;"/>
+	<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+</div><?php }
 }

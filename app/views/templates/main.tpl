@@ -31,7 +31,7 @@
 
 {include file="messages.tpl"}
 </div>
-{include file="stronnicowanie.tpl"}
+
 
 {include file="footer.tpl"}
 

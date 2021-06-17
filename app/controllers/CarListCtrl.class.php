@@ -14,6 +14,7 @@ class CarListCtrl {
     private $page; //strona
     private $form; //dane formularza wyszukiwania
     private $records; //rekordy pobrane z bazy danych
+    private $dramat = 0;
 
     public function __construct() {
         //stworzenie potrzebnych obiektów
@@ -47,7 +48,7 @@ class CarListCtrl {
 
         // 3. Pobranie listy rekordów z bazy danych
         // W tym wypadku zawsze wyświetlamy listę osób bez względu na to, czy dane wprowadzone w formularzu wyszukiwania są poprawne.
-        // Dlatego pobranie nie jest uwarunkowane poprawnością walidacji (jak miało to miejsce w kalkulatorze)
+        // Dlatego pobranie nie jest uwarunkowane poprawnością walidacji
         //przygotowanie frazy where na wypadek większej liczby parametrów
         $num_params = sizeof($search_params);
         if ($num_params > 1) {
@@ -56,8 +57,7 @@ class CarListCtrl {
             $where = &$search_params;
         }
 
-
-        //dodanie frazy sortującej po nazwisku
+        //dodanie frazy sortującej po nazwisku i limitu wyswietlanych danych
        $where ["ORDER"] = "rok";
        $where ["LIMIT"] = [$this->offset,$this->limit];
         //wykonanie zapytania
@@ -77,14 +77,19 @@ class CarListCtrl {
                 Utils::addErrorMessage($e->getMessage());
         }
 
+        // Sprawdzenie liczby rekordow w bazie
+        $count = App::getDB()->count("samochod", [
+            "id_car[<]" => 1000000
+        ]);
 
+        $this->dramat = $this->dramat+$count;
 
 //TUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
     $this->offset = $this->limit;
     $this->limit=$this->limit+2;
 
            $pages[0]['pageNumber'] = 1;
-            for ($i = 0; $i < ceil($this->limit / $this->offset); $i++) {
+            for ($i = 1; $i <= ceil($this->dramat / $this->limit); $i++) { // todo ilosc rekordow/ limit na stronie
                 $pages[$i]['pageNumber'] = $i + 1;
             }
         App::getSmarty()->assign("pages", $pages);
@@ -96,7 +101,8 @@ class CarListCtrl {
 
         // 4. wygeneruj widok
     public function action_carList() {
-        $this->carListLoad();
+        $this->page = ParamUtils::getFromPost("pageNumber");
+        $this->carListLoad(); // todo zweryfikowac caly proces -> 1. pobranie danych weryfykacja, czy nie sa puste 2. poberanie nowych danych 3. podmiana ich na stronie 4. odswiezenie ilosci stron.
         App::getSmarty()->assign('searchForm', $this->form); // dane formularza (wyszukiwania w tym wypadku)
         App::getSmarty()->assign('car', $this->records);  // lista rekordów z bazy danych
         App::getSmarty()->display('CarList.tpl');
@@ -109,23 +115,4 @@ class CarListCtrl {
         App::getSmarty()->display('CarListTable.tpl');
     }
 
-
-
-/*
-    $this->offset = $this->limit;
-    $this->limit=$this->limit+2;
-
-if ($this->offset == 0){$this->pages =1;}
-else{
-            $pages[0]['pageNumber'] = 1;
-            for ($i = 0; $i < ceil($this->limit / $this->offset); $i++) {
-                $pages[$i]['pageNumber'] = $i + 1;
-            }
-
-            App::getSmarty()->assign("pages", $pages);
 }
-*/
-
-}
-
-

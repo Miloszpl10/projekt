@@ -1,6 +1,6 @@
     <div style="text-align: center;">
         {foreach $pages as $page}
-            <input type="submit" value="{$page['pageNumber']}" name="pageNumber"
-                   onclick="ajaxPostForm('search-form','{$conf->action_root}action_carListPart?pageNumber={$page['pageNumber']}','all'); return false;"/>
+            <input type="button" value="{$page['pageNumber']}" name="pageNumber"
+                   onclick="ajaxPostForm('search-form','{$conf->action_root}carListPart?','tab_car'); return false;"/>
         {/foreach}
         </div>

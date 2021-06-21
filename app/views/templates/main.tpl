@@ -5,6 +5,7 @@
     <title>Aplikacja</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">	
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">{*css od stronnicowania - numeracja stron*}
     <link rel="stylesheet" href=""/projekt/app/views/templates/css/Style.css">
     <script type="text/javascript" src="{$conf->app_url}/js/functions.js"></script>
    </head>

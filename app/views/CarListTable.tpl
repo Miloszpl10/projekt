@@ -31,9 +31,33 @@
 {/foreach}
 </tbody>
 </table>
-<div style="text-align: center;">
-	{foreach $pages as $page}
-		<input type="button" value="{$page['pageNumber']}" name="pageNumber"
-			   onclick="ajaxPostForm('search-form','{$conf->action_root}carListPart?','tab_car'); return false;"/>
-	{/foreach}
-</div>
+
+
+<nav aria-label="Page navigation example">
+	<ul class="pagination">
+		{if {$searchForm->page > 1}}
+		<li class="page-item"><a class="page-link" onclick="ajaxReloadElement('table','{$conf->action_url}carPreviousPage?page={$searchForm->page}'); return false;">Previous</a></li>
+		{/if}
+
+		{foreach $pages as $page}
+			<li class="page-item"><a class="page-link" value="{$page['number']}" name="page" onclick="ajaxReloadElement('table','{$conf->action_url}carTestPage?page={$page['number']}'); return false;">{$page['number']}</a></li>
+
+		{/foreach}
+
+
+		{if {$searchForm->page < $searchForm->last_page}}
+		<li class="page-item"><a class="page-link" onclick="ajaxReloadElement('table','{$conf->action_url}carNextPage?page={$searchForm->page}'); return false;">Next</a></li>
+		{/if}
+	</ul>
+	<h5> Strona: {$searchForm->page}/{$searchForm->last_page}</h5>
+</nav>
+
+
+
+
+	{*<div style="text-align: center;">
+		{foreach $pages as $page}
+			<input type="button" value="{$page['number']}" name="page"
+				   onclick="ajaxReloadElement('table','{$conf->action_url}carTestPage?page={$page['number']}'); return false;">
+		{/foreach}
+	</div>*}

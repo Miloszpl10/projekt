@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-06-08 18:38:12
+/* Smarty version 3.1.34-dev-7, created on 2021-06-20 00:08:10
   from 'F:\Programy i Uczelnia\XAMPP\htdocs\projekt\app\views\CarList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60bf9cf4207f71_40758466',
+  'unifunc' => 'content_60ce6acae97745_94265163',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b77e78d005cfcfb85603ae510b7dcd53b157ec32' => 
     array (
       0 => 'F:\\Programy i Uczelnia\\XAMPP\\htdocs\\projekt\\app\\views\\CarList.tpl',
-      1 => 1623170290,
+      1 => 1624140180,
       2 => 'file',
     ),
   ),
@@ -21,28 +21,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:CarListTable.tpl' => 1,
   ),
 ),false)) {
-function content_60bf9cf4207f71_40758466 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ce6acae97745_94265163 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_96830883060bf9cf41fedf9_49807997', 'top');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_121735654360ce6acae809b0_16231855', 'top');
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_186229765260bf9cf4204569_32824218', 'bottom');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19525162760ce6acae8e5f4_70148321', 'bottom');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'top'} */
-class Block_96830883060bf9cf41fedf9_49807997 extends Smarty_Internal_Block
+class Block_121735654360ce6acae809b0_16231855 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'top' => 
   array (
-    0 => 'Block_96830883060bf9cf41fedf9_49807997',
+    0 => 'Block_121735654360ce6acae809b0_16231855',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -70,12 +70,12 @@ carNew">+ Nowy samochód</a>
 }
 /* {/block 'top'} */
 /* {block 'bottom'} */
-class Block_186229765260bf9cf4204569_32824218 extends Smarty_Internal_Block
+class Block_19525162760ce6acae8e5f4_70148321 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'bottom' => 
   array (
-    0 => 'Block_186229765260bf9cf4204569_32824218',
+    0 => 'Block_19525162760ce6acae8e5f4_70148321',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -87,6 +87,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 <?php $_smarty_tpl->_subTemplateRender("file:CarListTable.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 </div>
+
 <?php
 }
 }

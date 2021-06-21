@@ -23,4 +23,5 @@
 <div id="table">
 {include file="CarListTable.tpl"}
 </div>
+
 {/block}

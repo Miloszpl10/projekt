@@ -28,4 +28,21 @@
 </tbody>
 </table>
 
+<nav aria-label="Page navigation example">
+	<ul class="pagination">
+		{if {$searchForm->page > 1}}
+			<li class="page-item"><a class="page-link" onclick="ajaxReloadElement('table','{$conf->action_url}faktPreviousPage?page={$searchForm->page}'); return false;">Previous</a></li>
+		{/if}
 
+		{foreach $pages as $page}
+			<li class="page-item"><a class="page-link" value="{$page['number']}" name="page" onclick="ajaxReloadElement('table','{$conf->action_url}faktTestPage?page={$page['number']}'); return false;">{$page['number']}</a></li>
+
+		{/foreach}
+
+
+		{if {$searchForm->page < $searchForm->last_page}}
+			<li class="page-item"><a class="page-link" onclick="ajaxReloadElement('table','{$conf->action_url}faktNextPage?page={$searchForm->page}'); return false;">Next</a></li>
+		{/if}
+	</ul>
+	<h5> Strona: {$searchForm->page}/{$searchForm->last_page}</h5>
+</nav>

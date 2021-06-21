@@ -10,12 +10,9 @@ Utils::addRoute('notFound', 'NotFoundCtrl');
 //Utils::addRoute('action_name', 'controller_class_name');
 
 
-
-
 Utils::addRoute('loginShow',     'LoginCtrl');
 Utils::addRoute('login',         'LoginCtrl');
 Utils::addRoute('logout',        'LoginCtrl');
-
 
 //Wlasciciel dostep do faktury i uzupelniania
 Utils::addRoute('faktHistory',   'FaktHistoryCtrl',	    ['wlasciciel']);
